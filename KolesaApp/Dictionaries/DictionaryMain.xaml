@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:KolesaApp.Dictionaries">
+    <SolidColorBrush x:Key="MainColor" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="SecondColor" Color="#D3D3D3"/>
+    <SolidColorBrush x:Key="AdditiveColor" Color="#A163F5"/>
+</ResourceDictionary>
