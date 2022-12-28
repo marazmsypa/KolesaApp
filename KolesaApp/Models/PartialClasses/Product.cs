@@ -1,27 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace KolesaApp.Models
 {
     public partial class Product
     {
         Core db = new Core();
-        public string ImagePath
+        public ImageSource ImagePath
         {
             get
             {
+                byte[] image = null;
                 if (Image == null)
                 {
-                    return "..\\..\\Assets\\Images\\noPicture.png";
+                    image = File.ReadAllBytes($"..\\..\\Assets\\Images\\noPicture.png");
+
                 }
                 else
                 {
-                    return "/Assets/Images" + Image;
+                    image = File.ReadAllBytes($"../../Assets/Images{Image}");
                 }
-            }
+                return new ImageSourceConverter().ConvertFrom(image) as ImageSource;
+
+
+}
         }
         public string MaterialList
         {

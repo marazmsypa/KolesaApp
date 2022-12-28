@@ -26,5 +26,36 @@ namespace KolesaApp
             InitializeComponent();
             MainFrame.Navigate(new ProductPage());
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
+
+        private void NewProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AddProductPage());
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            var CurentPage = e.Content;
+            if (MainFrame.CanGoBack)
+            {
+                BackButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BackButton.Visibility = Visibility.Collapsed;
+            }
+            if (CurentPage is AddProductPage)
+            {
+                NewProductButton.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                NewProductButton.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

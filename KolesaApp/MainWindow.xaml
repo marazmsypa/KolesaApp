@@ -8,11 +8,16 @@
         Title="Магазин колес" Height="450" Width="800" Icon="assets/images/icon.png" MinHeight="450" MinWidth="800" MaxHeight="1000" MaxWidth="1920">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0"/>
+            <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Frame x:Name="MainFrame" Grid.Row="1">
-            
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Добавить новый продукт" x:Name="NewProductButton" Click="NewProductButton_Click"></Button>
+            <Button Content="Назад" x:Name="BackButton" Click="BackButton_Click"></Button>
+        </StackPanel>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" Navigated="MainFrame_Navigated" NavigationUIVisibility="Hidden">
+
         </Frame>
     </Grid>
 </Window>
